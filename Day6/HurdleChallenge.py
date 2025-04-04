@@ -46,3 +46,43 @@ def turn_around():
     
 while not at_goal():
     turn_around()
+
+
+# Reeborg has entered a hurdle race. Make him run the course, following the path shown.
+# The position and number of hurdles changes each time this world is reloaded.
+# Hurdel3 solution
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+def turn_around():
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+    
+while not at_goal():
+    if wall_in_front():
+       turn_around()
+    else:
+        move()
+
+# Maze Program Comeback after 15
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+while not at_goal():
+    if right_is_clear():
+        turn_right()
+        move()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
